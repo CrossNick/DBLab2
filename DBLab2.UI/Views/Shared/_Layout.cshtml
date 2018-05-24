@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/actions")
+</head>
+<body>
+    <div id="functionModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input ptoject name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="functionName">
+                </div>
+                <div class="modal-footer">
+                    <button id="FunctionLink" type="button" class="btn btn-default" data-url="@Url.Action("GetFunction", "Home")" onclick="getFunctionAjax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       
+        @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>*@
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="nav navbar-nav mr-auto">
+               
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Show data
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a id="getProjLink" data-url="@Url.Action("GetProjects", "Home")" onclick="getProjAjax()">Project</a></li>
+                        <li class="dropdown-item"><a id="getUserLink" data-url="@Url.Action("GetUsers", "Home")" onclick="getUserAjax()">User</a></li>
+                        <li class="dropdown-item"><a id="getTaskLink" data-url="@Url.Action("GetTasks", "Home")" onclick="getTaskAjax()">Task</a></li>
+                        <li class="dropdown-item"> <a id="getMilestoneLink" data-url="@Url.Action("GetMilestones", "Home")" onclick="getMilestoneAjax()">Milestone</a></li>
+                        <li class="dropdown-item"> <a id="getMilestoneTaskLink" data-url="@Url.Action("GetMilestoneTasks", "Home")"onclick="getMilestoneTaskAjax()">MilestoneTask</a></li>
+                        <li class="dropdown-item"> <a id="getRoleLink" data-url="@Url.Action("GetRoles", "Home")" onclick="getRoleAjax()">Role</a></li>
+                        <li class="dropdown-item"><a id="getUserRoleLink" data-url="@Url.Action("GetUserRoles", "Home")" onclick="getUserRoleAjax()">UserRole</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Simple query
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a id="Query1Link"  data-url="@Url.Action("GetSimpleQuery1", "Home")" onclick="getQuery1Ajax()">Show all Admins</a></li>
+                        <li class="dropdown-item"><a href="#">Query 2</a></li>
+                        <li class="dropdown-item"><a href="#">Query 3</a></li>
+                        <li class="dropdown-item"><a href="#">Query 4</a></li>
+                        <li class="dropdown-item"><a href="#">Query 5</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Agregate query
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a id="Agregate1Link"  data-url="@Url.Action("GetAgregate1", "Home")" onclick="getAgregate1Ajax()">Count tasks for each User</a></li>
+                        <li class="dropdown-item"><a  id="Agregate2Link"  data-url="@Url.Action("GetNested1", "Home")" onclick="getNested1Ajax()">Average number of tasks</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nested query
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a  id="Nested1Link"  data-url="@Url.Action("GetNested1", "Home")" onclick="getNested1Ajax()">Average number of tasks</a></li>
+                        <li class="dropdown-item"><a href="#">Query 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#functionModal">Function</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Procedure</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

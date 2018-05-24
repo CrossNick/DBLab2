@@ -1,0 +1,11 @@
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\obj\Debug\DBLab2.Busines.csprojResolveAssemblyReference.cache
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\obj\Debug\DBLab2.Busines.csproj.CoreCompileInputs.cache
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\DBLab2.Busines.dll
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\DBLab2.Busines.pdb
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\DBLab2.dll
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\EntityFramework.dll
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\DBLab2.pdb
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\DBLab2.dll.config
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\bin\Debug\EntityFramework.xml
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\obj\Debug\DBLab2.Busines.dll
+D:\Универ\3 курс\DBLab2\DBLab2.Busines\obj\Debug\DBLab2.Busines.pdb
