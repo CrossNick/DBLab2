@@ -81,6 +81,57 @@ namespace DBLab2.UI.Controllers
 			return res;
 		}
 
+		public JsonResult GetSimpleQuery2(string userName)
+		{
+			var result = queryLogic.SimpleQuery2(userName);
+			var res = Json(result, JsonRequestBehavior.AllowGet);
+			return res;
+		}
+
+		public JsonResult GetSimpleQuery3(string projectName)
+		{
+			var result = queryLogic.SimpleQuery3(projectName);
+			var res = Json(result, JsonRequestBehavior.AllowGet);
+			return res;
+		}
+
+		public JsonResult GetSimpleQuery4(string userName)
+		{
+			var query = queryLogic.SimpleQuery4(userName);
+			var result = new List<Query4ViewModel>();
+			foreach (var item in query)
+			{
+				result.Add(new Query4ViewModel()
+				{
+					TaskName = item.TaskName,
+					MlName = item.MlName,
+					StartDate = item.StartDate.ToString(),
+					EndDate = item.EndDate.ToString()
+				});
+			}
+			var res = Json(result, JsonRequestBehavior.AllowGet);
+			return res;
+		}
+
+		public JsonResult GetSimpleQuery5(string mlName)
+		{
+			var query = queryLogic.SimpleQuery5(mlName);
+			var result = new List<Query5ViewModel>();
+			foreach (var item in query)
+			{
+				result.Add(new Query5ViewModel()
+				{
+					TaskName = item.TaskName,
+					Description = item.Description,
+					CreationDate = item.CreationDate.ToString(),
+					DueDate = item.DueDate.ToString(),
+					ProjectName = item.ProjectName
+				});
+			}
+			var res = Json(result, JsonRequestBehavior.AllowGet);
+			return res;
+		}
+
 		public JsonResult GetAgregate1()
 		{
 			var result = queryLogic.AgregateQuery1();
@@ -95,9 +146,23 @@ namespace DBLab2.UI.Controllers
 			return res;
 		}
 
+		public JsonResult GetNested2(string projectName)
+		{
+			var result = queryLogic.NestedQuery2(projectName);
+			var res = Json(result, JsonRequestBehavior.AllowGet);
+			return res;
+		}
+
 		public JsonResult GetFunction(string projectName)
 		{
 			var result = queryLogic.FunctionQuery(projectName);
+			var res = Json(result, JsonRequestBehavior.AllowGet);
+			return res;
+		}
+
+		public JsonResult GetProcedure(string projectName)
+		{
+			var result = queryLogic.ProcedureQuery(projectName);
 			var res = Json(result, JsonRequestBehavior.AllowGet);
 			return res;
 		}

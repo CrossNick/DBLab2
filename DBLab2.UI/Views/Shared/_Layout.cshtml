@@ -10,6 +10,91 @@
     @Scripts.Render("~/bundles/actions")
 </head>
 <body>
+    <div id="query2Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input user name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="query2Name">
+                </div>
+                <div class="modal-footer">
+                    <button id="Query2Link" type="button" class="btn btn-default" data-url="@Url.Action("GetSimpleQuery2", "Home")" onclick="getSimpleQuery2Ajax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="query3Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input project name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="query3Name">
+                </div>
+                <div class="modal-footer">
+                    <button id="Query3Link" type="button" class="btn btn-default" data-url="@Url.Action("GetSimpleQuery3", "Home")" onclick="getSimpleQuery3Ajax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="query4Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input user name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="query4Name">
+                </div>
+                <div class="modal-footer">
+                    <button id="Query4Link" type="button" class="btn btn-default" data-url="@Url.Action("GetSimpleQuery4", "Home")" onclick="getSimpleQuery4Ajax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="query5Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input milestone name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="query5Name">
+                </div>
+                <div class="modal-footer">
+                    <button id="Query5Link" type="button" class="btn btn-default" data-url="@Url.Action("GetSimpleQuery5", "Home")" onclick="getSimpleQuery5Ajax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="nested2Modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input ptoject name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="nested2Name">
+                </div>
+                <div class="modal-footer">
+                    <button id="Nested2Link" type="button" class="btn btn-default" data-url="@Url.Action("GetNested2", "Home")" onclick="getNested2Ajax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div id="functionModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -22,6 +107,23 @@
                 </div>
                 <div class="modal-footer">
                     <button id="FunctionLink" type="button" class="btn btn-default" data-url="@Url.Action("GetFunction", "Home")" onclick="getFunctionAjax()" data-dismiss="modal">Sumbit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="procedureModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input ptoject name</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="procedureName">
+                </div>
+                <div class="modal-footer">
+                    <button id="ProcedureLink" type="button" class="btn btn-default" data-url="@Url.Action("GetProcedure", "Home")" onclick="getProcedureAjax()" data-dismiss="modal">Sumbit</button>
                 </div>
             </div>
 
@@ -57,10 +159,10 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li class="dropdown-item"><a id="Query1Link"  data-url="@Url.Action("GetSimpleQuery1", "Home")" onclick="getQuery1Ajax()">Show all Admins</a></li>
-                        <li class="dropdown-item"><a href="#">Query 2</a></li>
-                        <li class="dropdown-item"><a href="#">Query 3</a></li>
-                        <li class="dropdown-item"><a href="#">Query 4</a></li>
-                        <li class="dropdown-item"><a href="#">Query 5</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#query2Modal">Get user's tasks</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#query3Modal">Get project's tasks</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#query4Modal">Get tasks in milestones of user</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#query5Modal">Get Tasks from Milestone</a></li>
                     </ul>
                 </li>
 
@@ -80,7 +182,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li class="dropdown-item"><a  id="Nested1Link"  data-url="@Url.Action("GetNested1", "Home")" onclick="getNested1Ajax()">Average number of tasks</a></li>
-                        <li class="dropdown-item"><a href="#">Query 2</a></li>
+                        <li class="dropdown-item"><a  data-toggle="modal" data-target="#nested2Modal">Users in project</a></li>
                     </ul>
                 </li>
 
@@ -88,7 +190,7 @@
                     <a class="nav-link" data-toggle="modal" data-target="#functionModal">Function</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Procedure</a>
+                    <a class="nav-link" data-toggle="modal" data-target="#procedureModal">Procedure</a>
                 </li>
 
             </ul>

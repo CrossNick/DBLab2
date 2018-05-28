@@ -175,6 +175,102 @@ function getQuery1Ajax() {
     });
 }
 
+function getSimpleQuery2Ajax() {
+
+    $.ajax({
+        url: $('#Query2Link').data('url'),
+        data: 'userName=' + $('#query2Name').val(),
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.length != 0) {
+                $('#tablehead').empty();
+                $('#tablebody').empty();
+                $('#tablehead').append("<tr><th scope=\"col\">Task Name</th><th scope=\"col\">Descroption</th><th scope=\"col\">Project Name</th></tr>")
+                for (var x = 0; x < data.length; x++) {
+                    $('#tablebody').append("<tr><td scope=\"row\">" + data[x].TaskName + "</td><td scope=\"row\">" + data[x].Description + "</td><td scope=\"row\">" + data[x].ProjectName + "</td></tr>")
+                }
+            }
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function getSimpleQuery3Ajax() {
+
+    $.ajax({
+        url: $('#Query3Link').data('url'),
+        data: 'projectName=' + $('#query3Name').val(),
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.length != 0) {
+                $('#tablehead').empty();
+                $('#tablebody').empty();
+                $('#tablehead').append("<tr><th scope=\"col\">Task Name</th><th scope=\"col\">Descroption</th><th scope=\"col\">User Name</th></tr>")
+                for (var x = 0; x < data.length; x++) {
+                    $('#tablebody').append("<tr><td scope=\"row\">" + data[x].TaskName + "</td><td scope=\"row\">" + data[x].Description + "</td><td scope=\"row\">" + data[x].UserName + "</td></tr>")
+                }
+            }
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function getSimpleQuery4Ajax() {
+
+    $.ajax({
+        url: $('#Query4Link').data('url'),
+        data: 'userName=' + $('#query4Name').val(),
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.length != 0) {
+                $('#tablehead').empty();
+                $('#tablebody').empty();
+                $('#tablehead').append("<tr><th scope=\"col\">Task Name</th><th scope=\"col\">Milestone Name</th><th scope=\"col\">Start Date</th><th scope=\"col\">End Date</th></tr>")
+                for (var x = 0; x < data.length; x++) {
+                    $('#tablebody').append("<tr><td scope=\"row\">" + data[x].TaskName + "</td><td scope=\"row\">" + data[x].MlName + "</td><td scope=\"row\">" + data[x].StartDate + "</td><td scope=\"row\">" + data[x].EndDate + "</td></tr>")
+                }
+            }
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function getSimpleQuery5Ajax() {
+
+    $.ajax({
+        url: $('#Query5Link').data('url'),
+        data: 'mlName=' + $('#query5Name').val(),
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.length != 0) {
+                $('#tablehead').empty();
+                $('#tablebody').empty();
+                $('#tablehead').append("<tr><th scope=\"col\">Task Name</th><th scope=\"col\">Description</th><th scope=\"col\">Creation Date</th><th scope=\"col\">Due Date</th><th scope=\"col\">Project Name</th></tr>")
+                for (var x = 0; x < data.length; x++) {
+                    $('#tablebody').append("<tr><td scope=\"row\">" + data[x].TaskName + "</td><td scope=\"row\">" + data[x].Description + "</td><td scope=\"row\">" + data[x].CreationDate + "</td><td scope=\"row\">" + data[x].DueDate + "</td><td scope=\"row\">" + data[x].ProjectName + "</td></tr>")
+                }
+            }
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
 function getAgregate1Ajax() {
 
     $.ajax({
@@ -221,6 +317,30 @@ function getNested1Ajax() {
     });
 }
 
+function getNested2Ajax() {
+
+    $.ajax({
+        url: $('#Nested2Link').data('url'),
+        data: 'projectName=' + $('#nested2Name').val(),
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.length != 0) {
+                $('#tablehead').empty();
+                $('#tablebody').empty();
+                $('#tablehead').append("<tr><th scope=\"col\">User Name</th><th scope=\"col\">Role Name</th></tr>")
+                for (var x = 0; x < data.length; x++) {
+                    $('#tablebody').append("<tr><td scope=\"row\">" + data[x].UserName + "</td><td scope=\"row\">" + data[x].RoleName + "</td></tr>")
+                }
+            }
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
 function getFunctionAjax() {
 
     $.ajax({
@@ -236,6 +356,30 @@ function getFunctionAjax() {
                 $('#tablehead').append("<tr><th scope=\"col\">Number of users</th></tr>")
                 for (var x = 0; x < data.length; x++) {
                     $('#tablebody').append("<tr><td scope=\"row\">" + data[x].Num + "</td></tr>")
+                }
+            }
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function getProcedureAjax() {
+
+    $.ajax({
+        url: $('#ProcedureLink').data('url'),
+        data: 'projectName=' + $('#procedureName').val(),
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.length != 0) {
+                $('#tablehead').empty();
+                $('#tablebody').empty();
+                $('#tablehead').append("<tr><th scope=\"col\">User Name</th><th scope=\"col\">Role Name</th></tr>")
+                for (var x = 0; x < data.length; x++) {
+                    $('#tablebody').append("<tr><td scope=\"row\">" + data[x].UserName + "</td><td scope=\"row\">" + data[x].RoleName + "</td></tr>")
                 }
             }
         },
