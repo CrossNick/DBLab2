@@ -1,6 +1,7 @@
 ﻿using DBLab2.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
@@ -101,6 +102,45 @@ namespace DBLab2
 			System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@Name", projectName);
 			var result = _context.Database.SqlQuery<ProcedureModel>("UsersInProject @Name", param).ToList();
 			return result;
+		}
+
+		public void InsertTask(string taskName, string desctiption, string creationDate, string dueDate, int projectId, int userId)
+		{
+			var param1 = new SqlParameter("@Name", taskName);
+			var param2 = new SqlParameter("@Desc", desctiption);
+			var param3 = new SqlParameter("@CDate", creationDate);
+			var param4 = new SqlParameter("@DDate", dueDate);
+			var param5 = new SqlParameter("@pId", projectId);
+			var param6 = new SqlParameter("@uId", userId);
+			_context.Database.ExecuteSqlCommand("Insert into [Task] Values(@Name, @Desc,@CDate, @DDate, @pId, @uId )", 
+				param1, param2, param3, param4, param5, param6);
+		}
+
+		public void InsertMilestone(string mlName, string startDate, string endDate, int userId)
+		{
+			var param1 = new SqlParameter("@Name", mlName);
+			var param2 = new SqlParameter("@SDate", startDate);
+			var param3 = new SqlParameter("@EDate", endDate);
+			var param4 = new SqlParameter("@uId", userId);
+			_context.Database.ExecuteSqlCommand("Insert into [Milestone] Values(@Name, @SDate, @EDate, @uId )",
+				param1, param2, param3, param4);
+		}
+
+		public void InsertUserRole(int userId, int roleId, int projectId)
+		{
+			var param1 = new SqlParameter("@UserId", userId);
+			var param2 = new SqlParameter("@RoleId", roleId);
+			var param3 = new SqlParameter("@ProjectId", projectId);
+			_context.Database.ExecuteSqlCommand("Insert into [UserRole] Values(@ProjectId, @RoleId, @UserId)",
+				param1, param2, param3);
+		}
+
+		public void InsertMilestoneTask(int mlId, int taskId)
+		{
+			var param1 = new SqlParameter("@MlId", mlId);
+			var param2 = new SqlParameter("@TaskId", taskId);
+			_context.Database.ExecuteSqlCommand("Insert into [MilestoneTask] Values(@MlId, @TaskId)",
+				param1, param2);
 		}
 	}
 }

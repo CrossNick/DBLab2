@@ -28,10 +28,12 @@ namespace DBLab2.Repositories
 			var ent = table.Find(Id);
 			if(ent!= null)
 			{
-				table.Attach(ent);
+		
 				table.Remove(ent);
 				_context.SaveChanges();
+				table = _context.Set<T>();
 			}
+			
 		}
 
 		public IEnumerable<T> Get()

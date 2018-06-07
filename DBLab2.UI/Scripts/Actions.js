@@ -388,3 +388,236 @@ function getProcedureAjax() {
         }
     });
 }
+
+function addProjectAjax() {
+
+    $.ajax({
+        url: $('#addProjectLink').data('url'),
+        data: 'projectName=' + $('#addProjectName').val(),
+        type: "GET",
+        success: function () {
+            getProjAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+
+function addUserAjax() {
+    $.ajax({
+        url: $('#addUserLink').data('url'),
+        data: {
+            userName: $('#addUserName').val(),
+            firstName: $('#addUserFirstName').val(),
+            lastName: $('#addUserLastName').val(),
+            email: $('#addUserEmail').val(),
+            password: $('#addUserPassword').val(),
+        },
+        type: "GET",
+        success: function () {
+            getUserAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function addTaskAjax() {
+    $.ajax({
+        url: $('#addTaskLink').data('url'),
+        data: {
+            taskName: $('#addTaskName').val(),
+            desctiption: $('#addTaskDescription').val(),
+            creationDate: $('#addTaskCreationDate').val(),
+            dueDate: $('#addTaskDueDate').val(),
+            projectId: $('#addTaskProjectId').val(),
+            userId: $('#addTaskUserId').val()
+        },
+        type: "GET",
+        success: function () {
+            getTaskAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function addMilestoneAjax() {
+    $.ajax({
+        url: $('#addMilestoneLink').data('url'),
+        data: {
+            mlName: $('#addMilestoneName').val(),
+            startDate: $('#addMilestoneStartDate').val(),
+            endDate: $('#addMilestoneEndDate').val(),
+            userId: $('#addMilestoneUserId').val()
+        },
+        type: "GET",
+        success: function () {
+            getMilestoneAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function addRoleAjax() {
+    $.ajax({
+        url: $('#addRoleLink').data('url'),
+        data: {
+            roleName: $('#addRoleName').val()
+        },
+        type: "GET",
+        success: function () {
+            getRoleAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function addUserRoleAjax() {
+    $.ajax({
+        url: $('#addUserRoleLink').data('url'),
+        data: {
+            userId: $('#addUserRoleUserId').val(),
+            roleId: $('#addUserRoleRoleId').val(),
+            projectId: $('#addUserRoleProjectId').val()
+        },
+        type: "GET",
+        success: function () {
+            getUserRoleAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function addMilestoneTaskAjax() {
+    $.ajax({
+        url: $('#addMilestoneTaskLink').data('url'),
+        data: {
+            taskId: $('#addMilestoneTaskTaskId').val(),
+            mlId: $('#addMilestoneTaskMlId').val()
+        },
+        type: "GET",
+        success: function () {
+            getMilestoneTaskAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+
+function deleteProjectAjax() {
+
+    $.ajax({
+        url: $('#deleteProjectLink').data('url'),
+        data: 'projectId=' + $('#deleteProjectId').val(),
+        type: "GET",
+        success: function () {
+            getProjAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function deleteUserAjax() {
+
+    $.ajax({
+        url: $('#deleteUserLink').data('url'),
+        data: 'userId=' + $('#deleteUserId').val(),
+        type: "GET",
+        success: function () {
+            getUserAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function deleteTaskAjax() {
+
+    $.ajax({
+        url: $('#deleteTaskLink').data('url'),
+        data: 'taskId=' + $('#deleteTaskId').val(),
+        type: "GET",
+        success: function () {
+            getTaskAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function deleteRoleAjax() {
+
+    $.ajax({
+        url: $('#deleteRoleLink').data('url'),
+        data: 'proleId=' + $('#deleteRoleId').val(),
+        type: "GET",
+        success: function () {
+            getRoleAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function deleteMilestoneAjax() {
+
+    $.ajax({
+        url: $('#deleteMilestoneLink').data('url'),
+        data: 'milestoneId=' + $('#deleteMilestoneId').val(),
+        type: "GET",
+        success: function () {
+            getMilestoneAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function deleteUserRoleAjax() {
+
+    $.ajax({
+        url: $('#deleteUserRoleLink').data('url'),
+        data: 'userRoleId=' + $('#deleteUserRoleId').val(),
+        type: "GET",
+        success: function () {
+            getUserRoleAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}
+
+function deleteMilestoneTaskAjax() {
+
+    $.ajax({
+        url: $('#deleteMilestoneTaskLink').data('url'),
+        data: 'milestoneTaskId=' + $('#deleteMilestoneTaskId').val(),
+        type: "GET",
+        success: function () {
+            getMilestoneTaskAjax();
+        },
+        error: function () {
+            alert("I m here");
+        }
+    });
+}

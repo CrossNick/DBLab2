@@ -129,20 +129,339 @@
 
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div id="addProjectModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input ptoject</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addProjectName">Project Name: </label>
+                    <input type="text" class="form-control" id="addProjectName"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="addProjectLink" type="button" class="btn btn-default" data-url="@Url.Action("AddProject", "Home")" onclick="addProjectAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="addUserModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input User</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addUserName">User Name: </label>
+                    <input type="text" class="form-control" id="addUserName"><Br>
+                    <label for="addUserFirstName">First Name: </label>
+                    <input type="text" class="form-control" id="addUserFirstName"><Br>
+                    <label for="addUserLastName">Last Name: </label>
+                    <input type="date" class="form-control" id="addUserLastName"><Br>
+                    <label for="addUserEmail">Email: </label>
+                    <input type="date" class="form-control" id="addUserEmail"><Br>
+                    <label for="addUserPassword">Password: </label>
+                    <input type="password" class="form-control" id="addUserPassword"><Br>           
+                </div>
+                <div class="modal-footer">
+                    <button id="addUserLink" type="button" class="btn btn-default" data-url="@Url.Action("AddUser", "Home")" onclick="addUserAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="addTaskModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input Task</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addTaskName">Task Name: </label>
+                    <input type="text" class="form-control" id="addTaskName"><Br>
+                    <label for="addTaskDescription">Description: </label>
+                    <input type="text" class="form-control" id="addTaskDescription"><Br>
+                    <label for="addTaskCreationDate">Creation Date: </label>
+                    <input type="date" class="form-control" id="addTaskCreationDate"><Br>
+                    <label for="addTaskDueDate">Due Date: </label>
+                    <input type="date" class="form-control" id="addTaskDueDate"><Br>
+                    <label for="addTaskProjectId">Project Id: </label>
+                    <input type="number" class="form-control" id="addTaskProjectId"><Br>
+                    <label for="addTaskUserId">User Id: </label>
+                    <input type="number" class="form-control" id="addTaskUserId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="addTaskLink" type="button" class="btn btn-default" data-url="@Url.Action("AddTask", "Home")" onclick="addTaskAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="addMilestoneModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input Milestone</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addMilestoneName">Milestone Name: </label>
+                    <input type="text" class="form-control" id="addMilestoneName"><Br>
+                    <label for="addMilestoneStartDate">Start date: </label>
+                    <input type="text" class="form-control" id="addMilestoneStartDate"><Br>
+                    <label for="addMilestoneEndDate">End date: </label>
+                    <input type="date" class="form-control" id="addMilestoneEndDate"><Br>
+                    <label for="addMilestoneUserId">For user (ID): </label>
+                    <input type="date" class="form-control" id="addMilestoneUserId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="addMilestoneLink" type="button" class="btn btn-default" data-url="@Url.Action("AddMilestone", "Home")" onclick="addMilestoneAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="addRoleModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Input Role</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addRoleName">Role Name: </label>
+                    <input type="text" class="form-control" id="addRoleName"><Br>
+                  
+                </div>
+                <div class="modal-footer">
+                    <button id="addRoleLink" type="button" class="btn btn-default" data-url="@Url.Action("AddRole", "Home")" onclick="addRoleAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="addUserRoleModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add user to project</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addUserRoleUserId">Add user (ID): </label>
+                    <input type="text" class="form-control" id="addUserRoleUserId"><Br>
+                    <label for="addUserRoleRoleId">Witch Role (ID): </label>
+                    <input type="text" class="form-control" id="addUserRoleRoleId"><Br>
+                    <label for="addUserRoleProjectId">To Project (ID): </label>
+                    <input type="text" class="form-control" id="addUserRoleProjectId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="addUserRoleLink" type="button" class="btn btn-default" data-url="@Url.Action("AddUserRole", "Home")" onclick="addUserRoleAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="addMilestoneTaskModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add task to milestone</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="addMilestoneTaskTaskId">Add task (ID): </label>
+                    <input type="text" class="form-control" id="addMilestoneTaskTaskId"><Br>
+                    <label for="addMilestoneTaskMlId">To Milestone (ID): </label>
+                    <input type="text" class="form-control" id="addMilestoneTaskMlId"><Br>  
+                </div>
+                <div class="modal-footer">
+                    <button id="addMilestoneTaskLink" type="button" class="btn btn-default" data-url="@Url.Action("AddMilestoneTask", "Home")" onclick="addMilestoneTaskAjax()" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="deleteProjectModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Project</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteProjectId">Project to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteProjectId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteProjectLink" type="button" class="btn btn-danger" data-url="@Url.Action("DeleteProject", "Home")" 
+                            onclick="deleteProjectAjax()" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="deleteUserModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete User</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteUserId">User to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteUserId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteUserLink" type="button" class="btn btn-danger" data-url="@Url.Action("DeleteUser", "Home")"
+                            onclick="deleteUserAjax()" data-dismiss="modal">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="deleteTaskModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Task</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteTaskId">Task to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteTaskId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteTaskLink" type="button" class="btn btn-danger" data-url="@Url.Action("DeleteTask", "Home")"
+                            onclick="deleteTaskAjax()" data-dismiss="modal">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="deleteMilestoneModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Milestone</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteMilestoneId">Milestone to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteMilestoneId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteMilestoneLink" type="button" class="btn btn-default" data-url="@Url.Action("DeleteMilestone", "Home")"
+                            onclick="deleteMilestoneAjax()" data-dismiss="modal">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="deleteRoleModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Role</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteRoleId">Role to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteRoleId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteRoleLink" type="button" class="btn btn-default" data-url="@Url.Action("DeleteRole", "Home")"
+                            onclick="deleteRoleAjax()" data-dismiss="modal">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="deleteUserRoleModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete User-Project connection: </h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteUserRoleId">Connection to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteUserRoleId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteUserRoleLink" type="button" class="btn btn-default" data-url="@Url.Action("DeleteUserRole", "Home")"
+                            onclick="deleteUserRoleAjax()" data-dismiss="modal">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="deleteMilestoneTaskModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Milestone-Task connection</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="deleteMilestoneTaskId">Connection to delete (ID): </label>
+                    <input type="text" class="form-control" id="deleteMilestoneTaskId"><Br>
+                </div>
+                <div class="modal-footer">
+                    <button id="deleteMilestoneTaskLink" type="button" class="btn btn-default" data-url="@Url.Action("DeleteMilestoneTask", "Home")"
+                            onclick="deleteMilestoneTaskAjax()" data-dismiss="modal">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-inverse" >
        
-        @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>*@
+        
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="nav navbar-nav mr-auto">
                
-               
+               <li class="nav-item">
+                   <h4 style="color:white; margin-right:10px;">Bug Tracker</h4>
+               </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a style="color:white" class="nav-link dropdown-toggle btn-warning" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Show data
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink" >
                         <li class="dropdown-item"><a id="getProjLink" data-url="@Url.Action("GetProjects", "Home")" onclick="getProjAjax()">Project</a></li>
                         <li class="dropdown-item"><a id="getUserLink" data-url="@Url.Action("GetUsers", "Home")" onclick="getUserAjax()">User</a></li>
                         <li class="dropdown-item"><a id="getTaskLink" data-url="@Url.Action("GetTasks", "Home")" onclick="getTaskAjax()">Task</a></li>
@@ -154,7 +473,37 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a style="color:white" class="nav-link dropdown-toggle btn-success" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add record
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#addProjectModal">Project</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#addUserModal">User</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#addTaskModal">Task</a></li>
+                        <li class="dropdown-item"> <a data-toggle="modal" data-target="#addMilestoneModal">Milestone</a></li>
+                        <li class="dropdown-item"> <a data-toggle="modal" data-target="#addMilestoneTaskModal">Task to Milestone</a></li>
+                        <li class="dropdown-item"> <a data-toggle="modal" data-target="#addRoleModal">Role</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#addUserRoleModal">User to Project</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a style="color:white" class="nav-link dropdown-toggle btn-danger" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Delete record
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#deleteProjectModal">Project</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#deleteUserModal">User</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#deleteTaskModal">Task</a></li>
+                        <li class="dropdown-item"> <a data-toggle="modal" data-target="#deleteMilestoneModal">Milestone</a></li>
+                        <li class="dropdown-item"> <a data-toggle="modal" data-target="#deleteMilestoneTaskModal">Task from Milestone</a></li>
+                        <li class="dropdown-item"> <a data-toggle="modal" data-target="#deleteRoleModal">Role</a></li>
+                        <li class="dropdown-item"><a data-toggle="modal" data-target="#deleteUserRoleModal">User from Project</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  btn-primary" style="color:white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Simple query
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -167,7 +516,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle  btn-primary"  style="color:white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Agregate query
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -177,7 +526,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle btn-primary"  style="color:white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Nested query
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -187,10 +536,10 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#functionModal">Function</a>
+                    <a class="nav-link btn-primary"  style="color:white" data-toggle="modal" data-target="#functionModal">Function</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#procedureModal">Procedure</a>
+                    <a class="nav-link btn-primary" style="color:white" data-toggle="modal" data-target="#procedureModal">Procedure</a>
                 </li>
 
             </ul>

@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddLogic.cs" />
+    <Compile Include="DeleteLogic.cs" />
     <Compile Include="GetLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryLogic.cs" />

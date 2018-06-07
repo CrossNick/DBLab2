@@ -11,19 +11,23 @@ namespace DBLab2.UI.Controllers
 	public class HomeController : Controller
 	{
 		GetLogic getLogic;
+		AddLogic addLogic;
 		QueryLogic queryLogic;
+		DeleteLogic deleteLogic;
 
 		public HomeController()
 		{
 			getLogic = new GetLogic();
+			addLogic = new Busines.AddLogic();
 			queryLogic = new QueryLogic();
+			deleteLogic = new DeleteLogic();
 		}
 
 		public ActionResult Index()
 		{
 			return View();
 		}
-		
+
 		public JsonResult GetProjects()
 		{
 			var result = getLogic.GetProjects();
@@ -165,6 +169,72 @@ namespace DBLab2.UI.Controllers
 			var result = queryLogic.ProcedureQuery(projectName);
 			var res = Json(result, JsonRequestBehavior.AllowGet);
 			return res;
+		}
+
+		public void AddProject(string projectName)
+		{
+			addLogic.AddProject(projectName);
+		}
+
+		public void AddUser(string userName, string firstName, string lastName, string email, string password)
+		{
+			addLogic.AddUser( userName,  firstName,  lastName,  email,  password);
+		}
+
+		public void AddTask(string taskName, string desctiption, string creationDate, string dueDate, int projectId, int userId)
+		{
+			addLogic.AddTask(taskName, desctiption, creationDate, dueDate, projectId, userId);
+		}
+
+		public void AddMilestone(string mlName, string startDate, string endDate, int userId)
+		{
+			addLogic.AddMilestone( mlName,  startDate,  endDate,  userId);
+		}
+
+		public void AddRole(string roleName)
+		{
+			addLogic.AddRole(roleName);
+		}
+
+		public void AddUserRole(int userId, int roleId, int projectId)
+		{
+			addLogic.AddUserRole( userId,  roleId,  projectId);
+		}
+
+		public void AddMilestoneTask(int mlId, int taskId)
+		{
+			addLogic.AddMilestoneTask(mlId, taskId);
+		}
+
+
+		public void DeleteProject(int projectId)
+		{
+			deleteLogic.DeleteProject(projectId);
+		}
+		public void DeleteTask(int taskId)
+		{
+			deleteLogic.DeleteTask(taskId);
+		}
+		public void DeleteUser(int userId)
+		{
+			deleteLogic.DeleteUser(userId);
+		}
+		public void DeleteRole(int roleId)
+		{
+			deleteLogic.DeleteRole(roleId);
+		}
+		public void DeleteMilestone(int milestoneId)
+		{
+			deleteLogic.DeleteMilestone(milestoneId);
+		}
+		public void DeleteUserRole(int userRoleId)
+		{
+			deleteLogic.DeleteUserRole(userRoleId);
+		}
+		public void DeleteMilestoneTask(int milestoneTaskId)
+		{
+			deleteLogic.DeleteMilestoneTask(milestoneTaskId);
+
 		}
 
 	}
